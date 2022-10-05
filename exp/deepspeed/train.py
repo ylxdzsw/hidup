@@ -272,6 +272,8 @@ for iter in range(config.run_iter):
         print("iter time: ", iter_duration)
         print("avg±std:", np.mean(result_times[-config.avg_iter:]), np.std(result_times[-config.avg_iter:]))
 
+print("peak memory", torch.cuda.max_memory_allocated())
+
 if not config.trace:
     raise SystemExit
 

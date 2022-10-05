@@ -81,6 +81,8 @@ def run(global_rank, local_rank):
     #         loss.backward()
     #         optimizer.step()
 
+    print("peak memory", torch.cuda.max_memory_allocated())
+
     if not config.trace:
         return
 
