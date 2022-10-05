@@ -2,15 +2,15 @@ import os
 import sys
 import math
 
-rootpath = "/home/swzhang/spmd"
+rootpath = "/root/hidup"
 sys.path.insert(1, f"{rootpath}/spmd")
 
-# model_name = "Rmoe"
+model_name = "Rmoe"
 # model_name = "Rswitch"
 # model_name = "Vmoe"
-model_name = "Vswitch"
+# model_name = "Vswitch"
 
-world_size = 4
+world_size = 8
 nlayers = 8
 n_expert = 2 * world_size
 batch_size = 32 * world_size
@@ -27,7 +27,7 @@ nhid = emsize * 4
 dropout = 0.1
 nheads = 12
 
-master_addr = "10.28.1.27"
+master_addr = "127.0.0.1"
 master_port = 39262
 
 trace = True
@@ -46,7 +46,7 @@ lr = 5e-4
 
 run_iter = 50
 avg_iter = 20
-log_iter = 999
+log_iter = 10
 
 # fp16 = True
 fp16 = False

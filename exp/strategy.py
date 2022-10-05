@@ -17,6 +17,16 @@ print("Total parameters:", sum(math.prod(p.size()) for p in model.parameters()))
 annotate(model, config.input_shape())
 print_annotated_graph(model.graph)
 
+# for node in model.graph.nodes:
+#     if "arg_dict" in node.meta:
+#         print(node.target)
+#         for k, v in node.meta['arg_dict'].items():
+#             try:
+#                 print(' ', k, v.meta['output_shape'])
+#             except:
+#                 print(' ', k, v)
+#         print()
+
 nodes = list(model.graph.nodes)
 
 for i, node in enumerate(nodes):
